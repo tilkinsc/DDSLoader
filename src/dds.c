@@ -33,7 +33,6 @@ DDSFile* ddsloader_load(const char* path) {
 	memset(file, 0, sizeof(DDSFile));
 	fread(file, 1, 124, f); // read into struct up to dwReserved2; (EOF header)
 	
-	// TODO: check if has DDS_HEADER_DXT10
 	isDx10 = memcmp(&file->ddspf.dwFourCC, "DX10", 4) == 0 ? 1 : 0;
 	if(isDx10) {
 		file->ddsHeaderDx10 = malloc(sizeof(DDS_HEADER_DXT10));
