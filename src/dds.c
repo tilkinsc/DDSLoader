@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 
-DDSFile* ddsloader_load(const char* path) {
+DDSFile* dds_load(const char* path) {
 	unsigned int file_size;
 	
 	unsigned char* filesig = 0;
